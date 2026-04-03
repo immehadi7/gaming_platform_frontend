@@ -1,0 +1,135 @@
+.notice-bar-section {
+  margin-top: 4px;
+  margin-bottom: 20px;
+}
+
+.notice-bar {
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  padding: 16px 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
+}
+
+.notice-text {
+  color: #495057;
+}
+
+.quick-entry-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s ease;
+}
+
+.quick-entry-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
+}
+
+.quick-entry-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  background: #fff1f2;
+  color: var(--primary-color);
+  display: grid;
+  place-items: center;
+  font-size: 1.4rem;
+}
+
+.order-flow-section {
+  background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.order-flow-box {
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 48px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.05);
+}
+
+.flow-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 30px 20px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.03);
+}
+
+.flow-number {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.companion-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s ease;
+}
+
+.companion-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
+}
+
+.companion-image {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+@media (max-width: 991.98px) {
+  .order-flow-box {
+    padding: 28px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .notice-bar {
+    padding: 14px;
+  }
+
+  .quick-entry-card {
+    padding: 20px;
+  }
+
+  .order-flow-box {
+    padding: 22px;
+    border-radius: 20px;
+  }
+
+  .companion-image {
+    height: 220px;
+  }
+}
+
+.service-info-card {
+  padding: 10px 0;
+}
+
+.service-price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.quantity-box {
+  border: 1px solid var(--border-color);
+  padding: 16px;
+  border-radius: 14px;
+  width: fit-content;
+}
