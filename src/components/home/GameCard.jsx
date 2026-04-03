@@ -3,51 +3,101 @@ import { useNavigate } from 'react-router-dom';
 function GameCard({ game }) {
   const navigate = useNavigate();
 
+  const handleSpeak = () => {
+    const text = `${game.name}，${game.description}`;
+    const utterance = new SpeechSynthesisUtterance(text);
+
+    utterance.lang = 'zh-CN';
+    utterance.rate = 1;
+    utterance.pitch = 1;
+
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utterance);
+  };
+
   return (
-    <div className="card game-card border-0 shadow-sm h-100">
-      <img
-        src={game.image}
-        className="card-img-top game-image"
-        alt={game.name}
-        style={{ cursor: 'pointer' }}
-        onClick={() => navigate(`/service/${game.id}`)}
-      />
+    <div className="rental-card h-100">
+      <div className={`rental-card-top rental-card-top-${game.topTheme || 'pink'}`}>
+        <div className="rental-card-status-row">
+          <span className={`rental-status-badge ${game.status === '在线' ? 'online' : 'busy'}`}>
+            ● {game.status}
+          </span>
 
-      <div className="card-body d-flex flex-column">
-        <div className="d-flex justify-content-between align-items-start mb-2">
-          <h5
-            className="card-title fw-bold mb-0"
-            style={{ cursor: 'pointer' }}
-            onClick={() => navigate(`/service/${game.id}`)}
-          >
-            {game.name}
-          </h5>
-          <span className="badge bg-danger">{game.tag}</span>
+          <span className="rental-stock-badge">
+            {game.stockLabel || '出租中'}
+          </span>
         </div>
 
-        <p className="text-muted small mb-3">{game.description}</p>
+        <div
+          className="rental-card-image-wrap"
+          onClick={() => navigate(`/service/${game.id}`)}
+        >
+          <img
+            src={game.image}
+            alt={game.name}
+            className="rental-card-image"
+          />
+        </div>
+      </div>
 
-        <div className="mb-3">
-          <div className="fw-semibold small mb-2">语音介绍</div>
-          <audio controls className="w-100">
-            <source src={game.audio} type="audio/mpeg" />
-            您的浏览器不支持音频播放
-          </audio>
+      <div className="rental-card-body">
+        <div className="rental-card-rank-row">
+          <span className="rental-rank-tag">{game.game}</span>
+          <span className="rental-rank-text">{game.rank || '钻石段'}</span>
         </div>
 
-        <div className="d-flex justify-content-between align-items-center mt-auto">
+        <h5
+          className="rental-card-title"
+          onClick={() => navigate(`/service/${game.id}`)}
+        >
+          {game.name}
+        </h5>
+
+        <p className="rental-card-desc">
+          {game.description}
+        </p>
+
+        <div className="rental-chip-list">
+          {(game.features || []).map((feature, index) => (
+            <span key={index} className="rental-chip">
+              {feature}
+            </span>
+          ))}
+        </div>
+
+        <div className="rental-card-footer">
           <div>
-            <div className="text-muted small">价格</div>
-            <div className="fw-bold text-danger fs-5">¥{game.price}</div>
+            <div className="rental-price">
+              ¥{game.price}
+              <span className="rental-price-unit">¥40/小时</span>
+            </div>
+            <div className="rental-meta">
+              <span>◷ {game.deliveryText}</span>
+            </div>
           </div>
 
-          <button
-            type="button"
-            className="btn btn-danger"
-            onClick={() => navigate(`/service/${game.id}`)}
-          >
-            查看详情
-          </button>
+          <div className="rental-action-group">
+            <button
+              type="button"
+              className="btn rental-audio-btn"
+              onClick={handleSpeak}
+              title="播放语音介绍"
+            >
+              <i className="bi bi-volume-up"></i>
+            </button>
+
+            <button type="button" className="btn rental-cart-btn">
+              加入购物车
+            </button>
+
+            <button
+              type="button"
+              className="btn rental-order-btn"
+              onClick={() => navigate(`/service/${game.id}`)}
+            >
+              立即租用
+            </button>
+          </div>
         </div>
       </div>
     </div>

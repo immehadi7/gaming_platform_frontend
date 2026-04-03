@@ -133,3 +133,605 @@
   border-radius: 14px;
   width: fit-content;
 }
+
+.auth-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 24, 39, 0.45);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.auth-modal-box {
+  width: 100%;
+  max-width: 460px;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+.auth-modal-header {
+  background: linear-gradient(180deg, #ff2b45 0%, #e7132b 100%);
+  padding: 40px 24px 28px; /* slightly bigger */
+  text-align: center;
+}
+.auth-logo-circle {
+  width: 74px;
+  height: 74px;
+  margin: 0 auto 14px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.16);
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  font-size: 2rem;
+}
+
+.auth-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+}
+
+.auth-modal-body {
+  position: relative;
+  padding: 20px 22px 22px;
+}
+
+.auth-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 8px;
+  border: none;
+  background: transparent;
+  color: #9ca3af;
+  font-size: 1rem;
+}
+
+.auth-tab-switch {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  background: #f5f6f8;
+  padding: 4px;
+  border-radius: 14px;
+}
+
+.auth-tab-btn {
+  border: none;
+  background: transparent;
+  border-radius: 10px;
+  padding: 11px 10px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #6b7280;
+  transition: 0.2s ease;
+}
+
+.auth-tab-btn.active {
+  background: #ffffff;
+  color: #e7132b;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.auth-input {
+  height: 50px;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  padding-left: 16px;
+  font-size: 0.96rem;
+}
+
+.auth-input:focus {
+  border-color: #ff4d5f;
+  box-shadow: 0 0 0 0.2rem rgba(231, 19, 43, 0.12);
+}
+
+.auth-code-btn {
+  min-width: 120px;
+  border-radius: 14px;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  color: #4b5563;
+  font-weight: 600;
+}
+
+.auth-helper-text {
+  color: #9ca3af;
+  font-size: 0.85rem;
+}
+
+.auth-agree-text {
+  font-size: 0.88rem;
+  color: #6b7280;
+}
+
+.auth-submit-btn {
+  height: 50px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #ff2b45 0%, #e7132b 100%);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.auth-submit-btn:hover {
+  background: linear-gradient(180deg, #ff2b45 0%, #e7132b 100%);
+  color: #ffffff;
+}
+
+.auth-divider {
+  position: relative;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 0.85rem;
+  margin: 14px 0 12px;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 34%;
+  height: 1px;
+  background: #eceff3;
+}
+
+.auth-divider::before {
+  left: 0;
+}
+
+.auth-divider::after {
+  right: 0;
+}
+
+.auth-social-btn {
+  height: 46px;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  color: #4b5563;
+  font-weight: 600;
+}
+
+.auth-link-btn {
+  text-decoration: none;
+  color: #e7132b;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.auth-link-btn:hover {
+  color: #e7132b;
+}
+
+@media (max-width: 576px) {
+  .auth-modal-box {
+    max-width: 100%;
+    border-radius: 20px;
+  }
+
+  .auth-modal-header {
+    padding: 28px 18px 22px;
+  }
+
+  .auth-modal-body {
+    padding: 18px;
+  }
+
+  .auth-tab-switch {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hero-carousel-section {
+  padding: 24px 0 12px;
+  background: #ffffff;
+}
+
+.hero-carousel-wrapper {
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.08);
+}
+
+.hero-carousel-slide {
+  min-height: 360px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 48px 56px;
+}
+
+.hero-carousel-content {
+  max-width: 520px;
+  color: #ffffff;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff3cd;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.hero-carousel-title {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+
+.hero-carousel-subtitle {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.88);
+  margin-bottom: 28px;
+}
+
+.hero-carousel-price {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #ffd54f;
+}
+
+.hero-carousel-btn {
+  background: #ffffff;
+  color: #b91c1c;
+  border: none;
+  border-radius: 14px;
+  padding: 12px 24px;
+  font-weight: 700;
+}
+
+.hero-carousel-btn:hover {
+  background: #ffffff;
+  color: #991b1b;
+}
+
+.hero-carousel-wrapper .carousel-indicators {
+  margin-bottom: 18px;
+}
+
+.hero-carousel-wrapper .carousel-indicators [data-bs-target] {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: none;
+  opacity: 0.6;
+}
+
+.hero-carousel-wrapper .carousel-indicators .active {
+  width: 28px;
+  opacity: 1;
+}
+
+.hero-carousel-wrapper .carousel-control-prev,
+.hero-carousel-wrapper .carousel-control-next {
+  width: 56px;
+}
+
+.hero-carousel-wrapper .carousel-control-prev-icon,
+.hero-carousel-wrapper .carousel-control-next-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.22);
+  background-size: 48% 48%;
+}
+
+@media (max-width: 1199.98px) {
+  .hero-carousel-title {
+    font-size: 2.4rem;
+  }
+
+  .hero-carousel-slide {
+    min-height: 320px;
+    padding: 40px 44px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .hero-carousel-title {
+    font-size: 2rem;
+  }
+
+  .hero-carousel-slide {
+    min-height: 280px;
+    padding: 32px;
+  }
+
+  .hero-carousel-content {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero-carousel-wrapper {
+    border-radius: 18px;
+  }
+
+  .hero-carousel-slide {
+    min-height: 240px;
+    padding: 24px 22px;
+  }
+
+  .hero-carousel-title {
+    font-size: 1.55rem;
+  }
+
+  .hero-carousel-subtitle {
+    font-size: 0.92rem;
+    margin-bottom: 18px;
+  }
+
+  .hero-carousel-price {
+    font-size: 1.6rem;
+  }
+
+  .hero-carousel-btn {
+    padding: 10px 18px;
+    border-radius: 12px;
+  }
+
+  .hero-badge {
+    font-size: 0.78rem;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+  }
+}
+
+/* card design */
+
+.rental-card {
+  background: #ffffff;
+  border: 1px solid #e9edf3;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+  transition: all 0.22s ease;
+}
+
+.rental-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(96, 165, 250, 0.45);
+  box-shadow:
+    0 14px 30px rgba(59, 130, 246, 0.10),
+    0 0 0 1px rgba(96, 165, 250, 0.14);
+}
+
+.rental-card-top {
+  position: relative;
+  min-height: 132px;
+  padding: 10px 12px 0;
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 62%, #ffffff 100%);
+}
+
+.rental-card-top-pink {
+  background: linear-gradient(180deg, #fce7ef 0%, #f4f4f5 62%, #ffffff 100%);
+}
+
+.rental-card-top-purple {
+  background: linear-gradient(180deg, #efe7ff 0%, #f4f4f5 62%, #ffffff 100%);
+}
+
+.rental-card-top-gold {
+  background: linear-gradient(180deg, #fff3d6 0%, #f4f4f5 62%, #ffffff 100%);
+}
+
+.rental-card-top-gray {
+  background: linear-gradient(180deg, #eceff3 0%, #f4f4f5 62%, #ffffff 100%);
+}
+
+.rental-card-status-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rental-status-badge,
+.rental-stock-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 4px 8px;
+}
+
+.rental-status-badge.online {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.rental-status-badge.busy {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.rental-stock-badge {
+  background: #ef233c;
+  color: #ffffff;
+}
+
+.rental-card-image-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 86px;
+  cursor: pointer;
+}
+
+.rental-card-image {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.rental-card:hover .rental-card-image {
+  transform: scale(1.08);
+}
+
+.rental-card-body {
+  padding: 12px 12px 14px;
+}
+
+.rental-card-rank-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.rental-rank-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #7c3aed;
+  background: #f3e8ff;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.rental-rank-text {
+  font-size: 0.76rem;
+  color: #475569;
+}
+
+.rental-card-title {
+  font-size: 0.98rem;
+  line-height: 1.45;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 6px;
+  cursor: pointer;
+}
+
+.rental-card-title:hover {
+  color: #2563eb;
+}
+
+.rental-card-desc {
+  font-size: 0.88rem;
+  color: #0f172a;
+  line-height: 1.55;
+  min-height: 44px;
+  margin-bottom: 10px;
+}
+
+.rental-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.rental-chip {
+  font-size: 0.72rem;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.rental-card-footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.rental-price {
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1;
+  color: #ef233c;
+}
+
+.rental-price-unit {
+  font-size: 0.82rem;
+  color: #94a3b8;
+  margin-left: 4px;
+  text-decoration: line-through;
+}
+
+.rental-meta {
+  margin-top: 6px;
+  font-size: 0.76rem;
+  color: #94a3b8;
+}
+
+.rental-action-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.rental-audio-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid #dbeafe;
+  background: #eff6ff;
+  color: #2563eb;
+  padding: 0;
+}
+
+.rental-audio-btn:hover {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.rental-cart-btn {
+  border-radius: 10px;
+  border: 1px solid #dbeafe;
+  background: #f8fbff;
+  color: #2563eb;
+  padding: 8px 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.rental-cart-btn:hover {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.rental-order-btn {
+  border-radius: 10px;
+  border: none;
+  background: #ef233c;
+  color: #ffffff;
+  padding: 8px 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.rental-order-btn:hover {
+  background: #d90429;
+  color: #ffffff;
+}
+
+@media (max-width: 991.98px) {
+  .rental-card-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .rental-action-group {
+    justify-content: flex-start;
+  }
+}

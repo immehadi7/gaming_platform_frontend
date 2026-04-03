@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-function MainNavbar() {
+function MainNavbar({ onOpenLogin, onOpenRegister }) {
   return (
     <header className="border-bottom bg-white sticky-top shadow-sm">
       <nav className="navbar navbar-expand-lg">
@@ -41,12 +41,22 @@ function MainNavbar() {
               <button type="button" className="btn btn-light">
                 <i className="bi bi-search"></i>
               </button>
-              <Link to="/login" className="btn btn-outline-danger">
+
+              <button
+                type="button"
+                className="btn btn-outline-danger"
+                onClick={onOpenLogin}
+              >
                 登录
-              </Link>
-              <Link to="/register" className="btn btn-danger">
+              </button>
+
+              <button
+                type="button"
+                className="btn btn-danger"
+                onClick={onOpenRegister}
+              >
                 注册
-              </Link>
+              </button>
             </div>
           </div>
         </div>
